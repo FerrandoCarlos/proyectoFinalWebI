@@ -1,0 +1,163 @@
+/* Fuentes */
+@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Poppins:wght@400;600;700&display=swap");
+
+/* Fin Fuentes */
+/* Variables Globales */
+:root {
+  --Dark-Gray: #b2b2b2;
+  --Davys-gray: #575757;
+  --Medium-Aquamarine: #4ed4b3;
+  --Maximum-Blue: #51b0d7;
+  --Black: #000000;
+  --White: #ffffff;
+}
+
+/* Fin Variables Globales */
+/* Inicio reset estilos default */
+* {
+  background-origin: border-box;
+  /* position: relative; */
+  min-width: 0;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Fin reset estilos default */
+body,
+h1,
+h2,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--Maximum-Blue);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background-color: var(--Black);
+  color: var(--White);
+  padding: 20px 0;
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+.hero {
+  background-color: var(--Dark-Gray);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.hero img {
+  width: 24px;
+  height: auto;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.nav-menu {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-menu li {
+  margin-right: 20px;
+}
+
+.nav-menu li:last-child {
+  margin-right: 0;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: var(--White);
+}
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    z-index: 100;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: var(--Black);
+    position: absolute;
+    top: 6%;
+    left: 0%;
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: right;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    margin: 0;
+    text-align: center;
+  }
+
+  .nav-menu li a {
+    display: block;
+    padding: 10px 0;
+  }
+}
+
+main {
+  padding: 20px 0;
+  color: var(--Black);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--Black);
+  color: var(--Dark-Gray);
+  padding: 20px 0;
+  text-align: center;
+}
