@@ -161,3 +161,27 @@ footer {
   padding: 20px 0;
   text-align: center;
 }
+
+
+/* Carrusel */
+.images {
+  display: flex;
+  width: 100%;
+  height: auto;
+  border: 10px solid var(--White);
+
+  border-radius: 5px;
+  background-color: var(--Black);
+  box-shadow: 0 0 2px #999;
+
+}
+
+.images img {
+
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.images img.hidden {
+  opacity: 0;
+}
