@@ -15,7 +15,7 @@
 /* Fin Variables Globales */
 /* Inicio reset estilos default */
 * {
-  background-origin: border-box;
+  /* background-origin: border-box; */
   /* position: relative; */
   min-width: 0;
 }
