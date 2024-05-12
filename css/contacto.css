@@ -18,18 +18,15 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 main{
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .contacto{
-    position: absolute;
     width: 400px;
     height: 600px;
     background-color: var(--Davys-gray);
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;  
+    align-self: center;
 }
 h1{
     text-align: center;
