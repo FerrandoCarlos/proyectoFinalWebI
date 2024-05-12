@@ -24,7 +24,7 @@ main{
 }
 .contacto{
     width: 400px;
-    height: 100dvh;
+    height: 400px;
     background-color: var(--Davys-gray);
     align-self: center;
 }
