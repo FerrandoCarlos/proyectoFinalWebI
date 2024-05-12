@@ -38,5 +38,5 @@ form{
     align-items: center;
     flex-direction: column;
     border: 2px solid var(--Black);
-    border-radius: 5px;
+    border-radius: 10% / 50%;
 }
