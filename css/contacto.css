@@ -24,11 +24,11 @@ main{
 }
 .contacto{
     width: 400px;
-    height: 600px;
+    height: 100dvh;
     background-color: var(--Davys-gray);
     align-self: center;
 }
-h1{
+.contacto h1{
     text-align: center;
 }
 
@@ -37,4 +37,6 @@ form{
     justify-content:center;
     align-items: center;
     flex-direction: column;
+    border: 2px solid var(--Black);
+    border-radius: 5px;
 }
