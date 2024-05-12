@@ -17,11 +17,17 @@
 body{
     font-family: 'Poppins', sans-serif;
 }
-
+main{
+    position: relative;
+}
 .contacto{
+    position: absolute;
     width: 400px;
     height: 600px;
-    background-color: var(--Davys-gray);  
+    background-color: var(--Davys-gray);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);  
 }
 h1{
     text-align: center;
