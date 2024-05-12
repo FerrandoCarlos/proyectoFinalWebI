@@ -18,7 +18,7 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
-contacto{
+.contacto{
     width: 400px;
     height: 600px;
     background-color: var(--Davys-gray);
