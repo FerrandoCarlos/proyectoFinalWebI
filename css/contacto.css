@@ -16,20 +16,24 @@
 /* Fin Variables Globales */
 body{
     font-family: 'Poppins', sans-serif;
+    min-height: 100dvh;
+    width: 100%;
 }
 main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; 
 }
 .contacto{
-    width: 400px;
-    height: 400px;
-    background-color: var(--Davys-gray);
+    margin: auto;
+    margin-top: 10px;
+    width: 90%;
+    max-width: 400px;
     align-self: center;
+    border: 2px solid var(--White);
+    border-radius: 10% / 50%;
 }
 .contacto h1{
     text-align: center;
+    margin-top: 10px;
 }
 
 form{
@@ -37,6 +41,55 @@ form{
     justify-content:center;
     align-items: center;
     flex-direction: column;
-    border: 2px solid var(--Black);
-    border-radius: 10% / 50%;
+
+}
+
+.name,
+.email,
+.mensaje{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+label{
+    font-family: inherit;
+    font-weight: 600;
+    margin-top: 10px;
+}
+input{
+    font-family: inherit;
+    background:var(--White);
+    border: 2px solid var(--Maximum-Blue);
+    padding: 8px;   
+    font-size: 16px;
+    width: 300px;
+}
+
+input:focus{
+    border: 2px solid var(--Maximum-Blue); 
+}
+
+textarea{
+    font-family: inherit;
+    resize: none;
+    width: 300px;
+    height: 100px;
+    background:var(--White);
+    border: 2px solid var(--Maximum-Blue);
+    padding: 8px;   
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#btnEnviar{
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    outline: none;
+    border: 1px solid var(--Medium-Aquamarine);
+    border-radius: 1em;
+    margin-bottom: 20px;
+    background-color: var(--Medium-Aquamarine);
+    font-weight: 600;
 }
