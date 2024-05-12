@@ -21,10 +21,15 @@ body{
 .contacto{
     width: 400px;
     height: 600px;
-    background-color: var(--Davys-gray);
-    
-    
+    background-color: var(--Davys-gray);  
 }
 h1{
     text-align: center;
+}
+
+form{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
 }
