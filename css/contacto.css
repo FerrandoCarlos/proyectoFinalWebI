@@ -1,0 +1,30 @@
+/* Fuentes */
+@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Poppins:wght@400;600;700&display=swap");
+
+/* Fin Fuentes */
+
+/* Variables Globales */
+:root {
+  --Dark-Gray: #b2b2b2;
+  --Davys-gray: #575757;
+  --Medium-Aquamarine: #4ed4b3;
+  --Maximum-Blue: #51b0d7;
+  --Black: #000000;
+  --White: #ffffff;
+}
+
+/* Fin Variables Globales */
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+contacto{
+    width: 400px;
+    height: 600px;
+    background-color: var(--Davys-gray);
+    
+    
+}
+h1{
+    text-align: center;
+}
