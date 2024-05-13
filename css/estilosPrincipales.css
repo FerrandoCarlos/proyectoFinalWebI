@@ -4,12 +4,13 @@
 /* Fin Fuentes */
 /* Variables Globales */
 :root {
-  --Dark-Gray: #b2b2b2;
-  --Davys-gray: #575757;
-  --Medium-Aquamarine: #4ed4b3;
-  --Maximum-Blue: #51b0d7;
-  --Black: #000000;
+  --Timber-wolf: #d3d3d3;
+  --Dim-gray: #696969;
+  --Jade: #04A777;
+  --Process-Cyan: #51b0d7;
+  --Crimson: #dc143c;
   --White: #ffffff;
+  --Black: #000000;
 }
 
 /* Fin Variables Globales */
@@ -48,7 +49,7 @@ li {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: var(--Maximum-Blue);
+  background-color: var(--Process-Cyan);
 }
 
 .container {
@@ -68,7 +69,7 @@ header h1 {
 }
 
 .hero {
-  background-color: var(--Dark-Gray);
+  background-color: var(--Timber-wolf);
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -157,7 +158,7 @@ footer {
   left: 0;
   width: 100%;
   background-color: var(--Black);
-  color: var(--Dark-Gray);
+  color: var(--Timber-wolf);
   padding: 20px 0;
   text-align: center;
 }
@@ -169,7 +170,7 @@ footer {
   width: 30px;
   height: 30px;
   text-align: center;
-  background: var(--Davys-gray);
+  background: var(--Dim-gray);
   color: var(--White);
   text-decoration: none;
   text-shadow: 0 0 1px #000;

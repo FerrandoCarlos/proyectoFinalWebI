@@ -5,148 +5,145 @@
 
 /* Variables Globales */
 :root {
-  --Dark-Gray: #b2b2b2;
-  --Davys-gray: #575757;
-  --Medium-Aquamarine: #4ed4b3;
-  --Maximum-Blue: #51b0d7;
-  --Black: #000000;
+  --Timber-wolf: #d3d3d3;
+  --Dim-gray: #696969;
+  --Forest-green: #11862f;
+  --Process-Cyan: #51b0d7;
+  --Crimson: #dc143c;
   --White: #ffffff;
+  --Black: #000000;
 }
 /* Fin Variables Globales */
 
-body{
-    font-family: 'Poppins', sans-serif;
-    min-height: 100dvh;
-    width: 100%;
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100dvh;
+  width: 100%;
 }
 
-main{
-    display: flex; 
-    margin: 25px auto;
-    padding: 10px 40px;
+main {
+  display: flex;
+  margin: 25px auto;
+  padding: 10px 40px;
 }
 
-.contacto{
-    margin: 25px auto;
-    padding: 10px 40px;
-    width: 90%;
-    max-width: 500px;
-    border: 2px solid var(--White);
-    border-radius: 10%;
-    box-shadow: 0 2px 10px var(--Black);
+.contacto {
+  margin: 25px auto;
+  padding: 10px 40px;
+  width: 90%;
+  max-width: 500px;
+  border: 2px solid var(--White);
+  border-radius: 10%;
+  box-shadow: 0 2px 10px var(--Black);
 }
 
-.contacto h1{
-    text-align: center;
-    margin-top: 10px;
+.contacto h1 {
+  text-align: center;
+  margin-top: 10px;
 }
 
 /* FORMULARIO */
-.contacto form{
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    flex-direction: column;
+.contacto form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 /* LABELS */
-.form .name label{
-    display: block;
-    padding: 10px 0;
-    font-weight:600;
-}
-.form .email label{
-    display: block;
-    padding: 10px 0;
-    font-weight:600;
-}
-.form .mensaje label{
-    display: block;
-    margin: 10px auto;
-    padding: 10px 0;
-    font-weight:600;
+.form .name label,
+.form .email label,
+.form .phone label,
+.form .mensaje label {
+  display: block;
+  padding: 10px 0;
+  font-weight: 600;
 }
 
-.form .terminos label{
-    font-size: 0.8em;
-    margin: 10px auto;
-    padding: 10px 0;
-    font-weight: 300;
+.form .terminos label {
+  font-size: 0.8em;
+  margin: 10px auto;
+  padding: 10px 0;
+  font-weight: 300;
 }
 
 /* INPUTS */
 
-.form .name input{
-    width: 300px;
-    font-size: 1em;
-    color: var(--White);
-    background: transparent;
-    border-bottom: 2px solid var(--Davys-gray);
-    border-right: none;
-    border-top: none;
-    border-left: none;
-    outline: none;
-    line-height: 30px;
-    transition: all .5s ease;
-}
-.form .name input::placeholder{
-    color:var(--White);
-}
-.form .email input{
-    width: 300px;
-    font-size: 1em;
-    color: var(--White);
-    background: transparent;
-    border-bottom: 2px solid var(--Davys-gray);
-    border-right: none;
-    border-top: none;
-    border-left: none;
-    outline: none;
-    line-height: 30px;
-    transition: all .5s ease;
+.form .name input,
+.form .email input,
+.form .phone input {
+  width: 300px;
+  font-size: 1em;
+  color: var(--White);
+  background: transparent;
+  border-bottom: 2px solid var(--Dim-gray);
+  border-right: none;
+  border-top: none;
+  border-left: none;
+  outline: none;
+  line-height: 30px;
+  transition: all 0.5s ease;
 }
 
-.form .email input::placeholder{
-    color:var(--White);
+.form .name input::placeholder,
+.form .email input::placeholder,
+.form .phone input::placeholder {
+  color: var(--White);
+  padding: 0 30px;
 }
 
-.form .terminos input{
-    margin: 10px auto;
-    padding: 10px auto;
-    width: 25px;
+.form .terminos input {
+  margin: 10px auto;
+  padding: 10px auto;
+  width: 25px;
 }
 
 /* TEXTAREA */
 
-.form .mensaje textarea{
-    resize: none;
-    width: 300px;
-    /* height: 100px; */
-    font-size: 1em;
-    color: var(--White);
-    background: transparent;
-    border-bottom: 2px solid var(--Davys-gray);
-    border-right: none;
-    border-top: none;
-    border-left: none;
-    outline: none;
-    line-height: 30px;
-    transition: all .5s ease;
+.form .mensaje textarea {
+  resize: none;
+  width: 300px;
+  font-size: 1em;
+  color: var(--White);
+  background: transparent;
+  border-bottom: 2px solid var(--Dim-gray);
+  border-right: none;
+  border-top: none;
+  border-left: none;
+  outline: none;
+  line-height: 30px;
+  transition: all 0.5s ease;
 }
 
 /* BUTTON */
 
-.form .btnEnviar{
-    margin: 25px auto;
-    background:var(--Davys-gray); 
-    color: var(--White);
-    font-family: inherit;
-    font-weight: 600;
-    font-size: 1em;
-    padding: 10px 40px;
-    border-radius: 15em;
+.form .btnEnviar {
+  margin: 25px auto;
+  background: var(--Dim-gray);
+  color: var(--White);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1em;
+  padding: 10px 40px;
+  border-radius: 15em;
+}
+
+.form .btnEnviar:hover {
+  background-color: var(--Forest-green);
 }
 
 /* ERRORES */
-.error{
-    display: none;
+
+.error-name,
+.error-email,
+.error-phone {
+  display: none;
+  position: absolute;  
+  z-index: 1000;
 }
+
+.fa-circle-check{
+    color:var(--Forest-green);
+    font-size: 1.5rem;
+    padding: 1px 2px;
+}
+
