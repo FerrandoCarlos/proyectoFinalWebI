@@ -49,8 +49,10 @@ li {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: var(--Process-Cyan);
-  
+  background-image: url(../assets/circuit-board_4.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .container {
