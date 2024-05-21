@@ -37,11 +37,11 @@
     <main>
       <section class="contacto">
         <h1>Contáctenos</h1>
-        <form class="form" id="form" method="post">
+        <form name="form" class="form" id="formulario">
           <div class="name">
             <label for="name">Nombre</label>
             <div class="error-name" id="name-error">
-              <i class="fa-solid fa-circle-check"></i>
+              <i class="fa-solid fa-circle-xmark"></i>
             </div>
             <input
               type="text"
@@ -52,8 +52,7 @@
           </div>
           <div class="email">
             <label for="email">Correo</label>
-            <div class="error-email" id="name-error">
-              <i class="fa-solid fa-circle-check"></i>
+            <div class="error-email" id="email-error">
             </div>
             <input
               type="email"
@@ -64,13 +63,12 @@
           </div>
           <div class="phone">
             <label for="telefono">Teléfono</label>
-            <div class="error-phone" id="name-error">
-              <i class="fa-solid fa-circle-check"></i>
-          </div>  
+            <div class="error-phone" id="phone-error">
+            </div>
             <input
               type="tel"
               name="telefono"
-              id="telefono"
+              id="phone"
               placeholder="2664231456"
             />
           </div>
@@ -82,7 +80,7 @@
             <input type="checkbox" name="terminos" id="terminos" />
             <label for="terminos">Acepta los términos y condiciones</label>
           </div>
-          <div class="exito" id="exito-mensaje"></div>
+          <div id="salida"></div>
           <button class="btnEnviar" id="enviar" type="submit">ENVIAR</button>
         </form>
       </section>
