@@ -50,6 +50,7 @@ li {
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--Process-Cyan);
+  
 }
 
 .container {
@@ -169,6 +170,23 @@ footer {
 }
 
 /* Carrusel */
+.carrusel{
+  width: 100%;
+  padding: 0px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carrusel-btn{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.carrusel-btn a{
+  display: block;
+}
 #pre,
 #next {
   display: inline-block;
@@ -193,7 +211,6 @@ footer {
   width: 100%;
   height: auto;
   border: 10px solid var(--White);
-
   border-radius: 5px;
   background-color: var(--Black);
   box-shadow: 0 0 2px #999;
