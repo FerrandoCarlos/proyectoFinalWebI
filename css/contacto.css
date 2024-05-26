@@ -19,143 +19,86 @@
 }
 body {
   font-family: "Poppins", sans-serif;
-  min-height: 100dvh;
-  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
-main {
+.registro-container {
+  min-height: 100%;
   display: flex;
-  margin: 25px auto;
-  padding: 10px 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
-.contacto {
-  margin: 25px auto;
-  padding: 10px 40px;
-  width: 90%;
-  max-width: 500px;
-  border: 2px solid var(--White);
-  border-radius: 10%;
-  box-shadow: 0 2px 10px var(--Black);
+.form-container {
+  width: 700px;
+  max-width: 100%;
+  background: rgba(81, 176, 215, 0.7);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(81, 176, 215, 0.3);
 }
 
-.contacto h1 {
+.form-header {
+  background: var(--Dim-gray);
+  padding: 20px 40px;
   text-align: center;
+  border-radius: 10px 10px 0 0;
+  color: var(--Timber-wolf);
+  border-bottom: 5px solid var(--White);
+}
+
+.form {
+  padding: 25px 40px;
+}
+
+.form-box {
+  padding: 25px 40px;
+  margin-bottom: 10px;
+}
+
+.form-box input{
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  border: 1px solid var(--Timber-wolf);
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: 600;
   margin-top: 10px;
 }
 
-/* FORMULARIO */
-.contacto form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-/* LABELS */
-.form .name label,
-.form .email label,
-.form .phone label,
-.form .mensaje label {
+.form-box select{
   display: block;
-  padding: 10px 0;
-  font-weight: 600;
-}
-
-.form .terminos label {
-  font-size: 0.8em;
-  margin: 10px auto;
-  padding: 10px 0;
-  font-weight: 300;
-}
-
-/* INPUTS */
-
-.form .name input,
-.form .email input,
-.form .phone input {
-  width: 400px;
-  font-size: 1em;
-  color: var(--White);
-  box-sizing: border-box;
-  background: transparent;
-  border-bottom: 2px solid var(--Dim-gray);
-  border-right: none;
-  border-top: none;
-  border-left: none;
-  outline: none;
-  line-height: 30px;
-  transition: all 0.5s ease;
-  padding: 0 40px;
-}
-
-.form .name input::placeholder,
-.form .email input::placeholder,
-.form .phone input::placeholder {
-  color: var(--White);
-  padding: 0 5px;
-}
-
-
-
-.form .terminos input {
-  margin: 10px auto;
-  padding: 10px auto;
-  width: 25px;
-}
-
-/* TEXTAREA */
-
-.form .mensaje textarea {
-  resize: none;
-  width: 400px;
-  color: var(--White);
-  background: transparent;
-  border-bottom: 2px solid var(--Dim-gray);
-  border-right: none;
-  border-top: none;
-  border-left: none;
-  outline: none;
-  transition: all 0.5s ease;
-}
-.form .mensaje textarea:focus {
-  font-size: 2em;
-}
-
-/* BUTTON */
-
-.form .btnEnviar {
-  margin: 25px auto;
-  background: var(--Dim-gray);
-  color: var(--White);
+  width: 100%;
   font-family: inherit;
+  border: 1px solid var(--Timber-wolf);
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 15px;
   font-weight: 600;
-  font-size: 1em;
-  padding: 10px 40px;
-  border-radius: 15em;
+  margin-top: 10px;
 }
 
-.form .btnEnviar:hover {
-  background-color: var(--Forest-green);
-}
-
-/* ERRORES */
-
-.error-name,
-.error-email,
-.error-phone {
+.form-box textarea{
   display: block;
-  position: absolute;
-  opacity: 1;
-  z-index: 1000;
+  width: 100%;
+  r
+  font-family: inherit;
+  border: 1px solid var(--Timber-wolf);
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 10px;
 }
 
-.fa-circle-check {
-  color: var(--Forest-green);
-  font-size: 1.5rem;
-  padding: 1px 2px;
-}
-.fa-circle-xmark {
-  color: var(--Crimson);
-  font-size: 1.5rem;
-  padding: 1px 2px;
+.form-box input,
+textarea,
+select:focus{
+  outline-color: var(--Process-Cyan);
 }

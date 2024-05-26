@@ -35,54 +35,49 @@
       </div>
     </header>
     <main>
-      <section class="contacto">
-        <h1>Contáctenos</h1>
-        <form name="form" class="form" id="formulario">
-          <div class="name">
-            <label for="name">Nombre</label>
-            <div class="error-name" id="name-error">
-              <i class="fa-solid fa-circle-xmark"></i>
-            </div>
-            <input
-              type="text"
-              name="Nombre"
-              id="name"
-              placeholder="Ingrese su nombre"
-            />
+      <section class="registro-container">
+        <div class="form-container">
+          <div class="form-header">
+            <h2>Formulario de contacto</h2>
           </div>
-          <div class="email">
-            <label for="email">Correo</label>
-            <div class="error-email" id="email-error">
-            </div>
-            <input
-              type="email"
-              name="correo"
-              id="email"
-              placeholder="micorreo@example.com"
-            />
-          </div>
-          <div class="phone">
-            <label for="telefono">Teléfono</label>
-            <div class="error-phone" id="phone-error">
-            </div>
-            <input
-              type="tel"
-              name="telefono"
-              id="phone"
-              placeholder="2664231456"
-            />
-          </div>
-          <div class="mensaje">
-            <label for="mensaje">Dejanos aquí tú mensaje</label>
-            <textarea name="mensaje" id="mensaje"></textarea>
-          </div>
-          <div class="terminos">
-            <input type="checkbox" name="terminos" id="terminos" />
-            <label for="terminos">Acepta los términos y condiciones</label>
-          </div>
-          <div id="salida"></div>
-          <button class="btnEnviar" id="enviar" type="submit">ENVIAR</button>
-        </form>
+          <form class="form" id="user-form" autocomplete="off" accept-charset="utf-8">
+              <div class="form-box">
+                <label for="nombre">Nombre</label>
+                <small>* campo obligatorio</small>
+                <input type="text" name="nombre" id="nombre" placeholder="Ingresé aquí su nombre">
+                <small class="validacion"><i class="fa fa-check-circle" aria-hidden="true"></i></small>  
+                <small class="validacion"><i class="fa fa-times-circle" aria-hidden="true"></i></i></small>  
+              </div>
+              <div class="form-box">
+                <label for="email">Email</label>
+                <small>* campo obligatorio</small>
+                <input type="email" name="email" id="email" placeholder="info@example.com">
+                <small class="validacion"><i class="fa fa-check-circle" aria-hidden="true"></i></small>  
+                <small class="validacion"><i class="fa fa-times-circle" aria-hidden="true"></i></i></small>  
+              </div>
+              <div class="form-box">
+                <label for="tel">Teléfono</label>
+                <input type="text" name="email" id="email" placeholder="2664123456">
+                <small class="validacion"><i class="fa fa-check-circle" aria-hidden="true"></i></small>  
+                <small class="validacion"><i class="fa fa-times-circle" aria-hidden="true"></i></i></small>  
+              </div>
+              <div class="form-box">
+                <label for="servicio">Elija la opción deseada</label>
+                <select name="servicio" id="servicio">
+                  <option value="1">Celulares</option>  
+                  <option value="2">Computadoras</option>  
+                  <option value="3">Electronica en Gral</option>  
+                  <option value="4">Soporte técnico</option>  
+                  <option value="5">otra consulta</option>  
+                </select>
+              </div>
+              <div class="form-box">
+                <label for="mensaje">Déjanos un mensaje</label>
+                <textarea name="mensaje" id="mensaje"></textarea>
+              </div>
+              <button type="submit" id="submit-btn">Enviar</button>
+          </form>
+        </div>
       </section>
     </main>
     <footer>

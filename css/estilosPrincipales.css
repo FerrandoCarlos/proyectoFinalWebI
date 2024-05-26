@@ -19,9 +19,7 @@
   min-width: 0;
 }
 
-body {
-  min-height: 100dvh;
-}
+
 
 h1,
 h2,
@@ -50,7 +48,7 @@ li {
 body {
   font-family: "Poppins", sans-serif;
   background-image: url(../assets/circuit-board_7.gif);
-  background-size: cover;
+  background-size: auto;
   background-position: center center;
   background-repeat: no-repeat;
 }
