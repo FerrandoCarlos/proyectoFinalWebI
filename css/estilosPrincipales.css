@@ -303,6 +303,20 @@ footer {
 .card-horizontal-map {
   width: 60%;
 }
+.card-horizontal-img {
+  width: 60%;
+}
+.card-horizontal-content ul{
+ margin-top: 20px;
+padding-left: 30px;
+}
+.precio{
+  font-weight: bold;
+  font-size: x-large;
+}
+.text-precio{
+  margin-top: 50px;
+}
 
 .card-horizontal-map iframe {
   width: 100%;
