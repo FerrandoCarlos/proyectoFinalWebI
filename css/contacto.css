@@ -87,7 +87,7 @@ textarea {
 .validar.fa {
 	visibility: visible;
 	position: absolute;
-	bottom: 20px;
+	bottom: 40px;
 	right: 5px;
 }
 
@@ -121,4 +121,14 @@ select:focus {
 
 .exito {
 	color: var(--Forest-green);
+}
+
+.parrafo-error {
+	color: var(--Crimson);
+	margin-top: 5px;
+}
+
+.parrafo-exito {
+	color: var(--Forest-green);
+	margin-top: 5px;
 }

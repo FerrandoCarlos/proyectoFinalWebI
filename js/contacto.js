@@ -7,27 +7,59 @@ const regExTel = /^\d{7,14}$/;
 let nombreInput = document.getElementById('nombre');
 let emailInput = document.getElementById('email');
 let telInput = document.getElementById('tel');
-let servicioInput = document.getElementById('servicio');
-let mensajeInput = document.getElementById('mensaje');
+
+
 let validarNombre = document.getElementById('validarNombre')
+let validarEmail = document.getElementById('validarEmail')
 
 
+const icono = document.createElement("i");
+const parrafo = document.createElement("small");
 
-
+//limpiarCampos();
 
 function validar() {
-    let nombreValor = nombreInput.value.trim();
-    validarNombre(nombreValor);
-    console.log(nombreValor);
+
+    valNombre();
 
 
     return false;
 }
 
-function validarNombre(nombre) {
-    if (nombre == '') {
-        const icono = document.createElement("i");
+function valNombre() {
+
+    let nombreTxt = nombreInput.value.trim();
+    console.log(nombreTxt)
+
+    if (nombreTxt == '') {
         icono.classList.add("validar", "fa", "fa-times-circle", "error");
         validarNombre.appendChild(icono);
+        parrafo.innerHTML = "El campo no puede estar vacío";
+        parrafo.classList.add("parrafo-error");
+        validarNombre.appendChild(parrafo);
+    } else if (!regExNombre.test(nombreTxt)) {
+        icono.classList.add("validar", "fa", "fa-times-circle", "error");
+        validarNombre.appendChild(icono);
+        parrafo.innerHTML = "Ingrese un nombre valido";
+        parrafo.classList.add("parrafo-error");
+        validarNombre.appendChild(parrafo);
     }
+
+    if (regExNombre.test(nombreTxt)) {
+        icono.classList.add("validar", "fa", "fa-check-circle", "exito");
+        validarNombre.appendChild(icono);
+        parrafo.innerHTML = "El nombre ingresado es correcto";
+        parrafo.classList.add("parrafo-exito");
+        validarNombre.appendChild(parrafo);
+    }
+}
+
+
+function limpiarCampos() {
+    parrafo.innerHTML = "";
+    icono.classList.remove("validar", "fa", "fa-times-circle", "error");
+    icono.classList.remove("validar", "fa", "fa-check-circle", "exito");
+    parrafo.classList.remove("error");
+    parrafo.classList.remove("exito");
+
 }
