@@ -40,42 +40,65 @@
           <div class="form-header">
             <h2>Formulario de contacto</h2>
           </div>
-          <form class="form" id="user-form" autocomplete="off" accept-charset="utf-8">
-              <div class="form-box">
-                <label for="nombre">Nombre</label>
-                <small>* campo obligatorio</small>
-                <input type="text" name="nombre" id="nombre" placeholder="Ingresé aquí su nombre">
-                <small class="validacion"><i class="fa fa-check-circle" aria-hidden="true"></i></small>  
-                <small class="validacion"><i class="fa fa-times-circle" aria-hidden="true"></i></i></small>  
+          <form
+            class="form"
+            id="user-form"
+            autocomplete="off"
+            accept-charset="utf-8"
+          >
+            <div class="form-box">
+              <label for="nombre">Nombre</label>
+              <small class="obligatorio">* campo obligatorio</small>
+              <input
+                type="text"
+                name="nombre"
+                id="nombre"
+                placeholder="Ingresé aquí su nombre"
+              />
+              <div class="validacion">
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
               </div>
-              <div class="form-box">
-                <label for="email">Email</label>
-                <small>* campo obligatorio</small>
-                <input type="email" name="email" id="email" placeholder="info@example.com">
-                <small class="validacion"><i class="fa fa-check-circle" aria-hidden="true"></i></small>  
-                <small class="validacion"><i class="fa fa-times-circle" aria-hidden="true"></i></i></small>  
+            </div>
+            <div class="form-box">
+              <label for="email">Email</label>
+              <small class="obligatorio">* campo obligatorio</small>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="info@example.com"
+              />
+              <div class="validacion">
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
               </div>
-              <div class="form-box">
-                <label for="tel">Teléfono</label>
-                <input type="text" name="email" id="email" placeholder="2664123456">
-                <small class="validacion"><i class="fa fa-check-circle" aria-hidden="true"></i></small>  
-                <small class="validacion"><i class="fa fa-times-circle" aria-hidden="true"></i></i></small>  
+            </div>
+            <div class="form-box">
+              <label for="tel">Teléfono</label>
+              <input
+                type="text"
+                name="email"
+                id="email"
+                placeholder="2664123456"
+              />
+              <div class="validacion">
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
               </div>
-              <div class="form-box">
-                <label for="servicio">Elija la opción deseada</label>
-                <select name="servicio" id="servicio">
-                  <option value="1">Celulares</option>  
-                  <option value="2">Computadoras</option>  
-                  <option value="3">Electronica en Gral</option>  
-                  <option value="4">Soporte técnico</option>  
-                  <option value="5">otra consulta</option>  
-                </select>
-              </div>
-              <div class="form-box">
-                <label for="mensaje">Déjanos un mensaje</label>
-                <textarea name="mensaje" id="mensaje"></textarea>
-              </div>
-              <button type="submit" id="submit-btn">Enviar</button>
+            </div>
+            <div class="form-box">
+              <label for="servicio">Elija la opción deseada</label>
+              <select name="servicio" id="servicio">
+                <option value="1">Celulares</option>
+                <option value="2">Computadoras</option>
+                <option value="3">Electronica en Gral</option>
+                <option value="4">Soporte técnico</option>
+                <option value="5">otra consulta</option>
+              </select>
+            </div>
+            <div class="form-box">
+              <label for="mensaje">Déjanos un mensaje</label>
+              <textarea name="mensaje" id="mensaje"></textarea>
+            </div>
+            <button type="submit" id="submit-btn">Enviar</button>
           </form>
         </div>
       </section>

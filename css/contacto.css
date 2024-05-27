@@ -37,8 +37,8 @@ body {
   background: rgba(81, 176, 215, 0.7);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   border: 1px solid rgba(81, 176, 215, 0.3);
 }
 
@@ -58,11 +58,17 @@ body {
 .form-box {
   padding: 25px 40px;
   margin-bottom: 10px;
+  position: relative;
 }
 
-.form-box input{
+.form-box .obligatorio {
   display: block;
-  width: 100%;
+  color: var(--Crimson);
+}
+
+.form-box input {
+  display: inline-block;
+  width: 90%;
   font-family: inherit;
   border: 1px solid var(--Timber-wolf);
   border-radius: 5px;
@@ -72,9 +78,16 @@ body {
   margin-top: 10px;
 }
 
-.form-box select{
+.form-box .validacion {
+  visibility: hidden;
+  position: absolute;
+  bottom: 36.8px;
+  right: 80px;
+}
+
+.form-box select {
   display: block;
-  width: 100%;
+  width: 95%;
   font-family: inherit;
   border: 1px solid var(--Timber-wolf);
   border-radius: 5px;
@@ -84,9 +97,9 @@ body {
   margin-top: 10px;
 }
 
-.form-box textarea{
+.form-box textarea {
   display: block;
-  width: 100%;
+  width: 90%;
   font-family: inherit;
   border: 1px solid var(--Timber-wolf);
   border-radius: 5px;
@@ -94,10 +107,34 @@ body {
   font-size: 15px;
   font-weight: 600;
   margin-top: 10px;
+  resize: none;
+  height: 100px;
 }
 
 .form-box input,
 textarea,
-select:focus{
+select:focus {
   outline-color: var(--Process-Cyan);
+}
+
+.form button{
+  display: block;
+  width: 83%;
+  padding: 15px;
+  background: var(--Dim-gray);
+  margin: 0 0 0 40px;
+  border-radius: 5px;
+  color: var(--Timber-wolf);
+  font-size: 15px;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.error{
+  color: var(--Crimson);
+}
+
+.exito{
+  color: var(--Forest-green);
 }
