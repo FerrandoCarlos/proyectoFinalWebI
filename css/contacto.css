@@ -56,9 +56,9 @@ body {
 }
 
 .form-box {
+  margin-right: 20px;
   padding: 25px 40px;
   margin-bottom: 10px;
-  position: relative;
 }
 
 .form-box .obligatorio {
@@ -66,9 +66,11 @@ body {
   color: var(--Crimson);
 }
 
-.form-box input {
-  display: inline-block;
-  width: 90%;
+.form-box input,
+select,
+textarea {
+  display: block;
+  width: 100%;
   font-family: inherit;
   border: 1px solid var(--Timber-wolf);
   border-radius: 5px;
@@ -79,34 +81,16 @@ body {
 }
 
 .form-box .validacion {
+  position: relative;
+}
+.form-box .validacion i {
   visibility: hidden;
   position: absolute;
-  bottom: 36.8px;
-  right: 80px;
-}
-
-.form-box select {
-  display: block;
-  width: 95%;
-  font-family: inherit;
-  border: 1px solid var(--Timber-wolf);
-  border-radius: 5px;
-  padding: 15px;
-  font-size: 15px;
-  font-weight: 600;
-  margin-top: 10px;
+  bottom: 20px;
+  right: 5px;
 }
 
 .form-box textarea {
-  display: block;
-  width: 90%;
-  font-family: inherit;
-  border: 1px solid var(--Timber-wolf);
-  border-radius: 5px;
-  padding: 15px;
-  font-size: 15px;
-  font-weight: 600;
-  margin-top: 10px;
   resize: none;
   height: 100px;
 }
@@ -117,7 +101,8 @@ select:focus {
   outline-color: var(--Process-Cyan);
 }
 
-.form button{
+
+.form button {
   display: block;
   width: 83%;
   padding: 15px;
@@ -131,10 +116,10 @@ select:focus {
   font-weight: 600;
 }
 
-.error{
+.error {
   color: var(--Crimson);
 }
 
-.exito{
+.exito {
   color: var(--Forest-green);
 }
