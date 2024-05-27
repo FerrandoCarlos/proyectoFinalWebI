@@ -4,122 +4,121 @@
 
 /* Variables Globales */
 :root {
-  --Timber-wolf: #d3d3d3;
-  --Dim-gray: #696969;
-  --Forest-green: #11862f;
-  --Process-Cyan: #51b0d7;
-  --Crimson: #dc143c;
-  --White: #ffffff;
-  --Black: #000000;
+	--Timber-wolf: #d3d3d3;
+	--Dim-gray: #696969;
+	--Forest-green: #11862f;
+	--Process-Cyan: #51b0d7;
+	--Crimson: #dc143c;
+	--White: #ffffff;
+	--Black: #000000;
 }
 /* Fin Variables Globales */
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 body {
-  font-family: "Poppins", sans-serif;
-  height: 100vh;
-  box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	height: 100vh;
+	box-sizing: border-box;
 }
 
 .registro-container {
-  min-height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+	min-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .form-container {
-  width: 700px;
-  max-width: 100%;
-  background: rgba(81, 176, 215, 0.7);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(81, 176, 215, 0.3);
+	width: 700px;
+	max-width: 100%;
+	/* efecto glass */
+	background: rgba(81, 176, 215, 0.7);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+	border: 1px solid rgba(81, 176, 215, 0.3);
 }
 
 .form-header {
-  background: var(--Dim-gray);
-  padding: 20px 40px;
-  text-align: center;
-  border-radius: 10px 10px 0 0;
-  color: var(--Timber-wolf);
-  border-bottom: 5px solid var(--White);
+	background: var(--Dim-gray);
+	padding: 20px 40px;
+	text-align: center;
+	border-radius: 10px 10px 0 0;
+	color: var(--Timber-wolf);
+	border-bottom: 5px solid var(--White);
 }
 
 .form {
-  padding: 25px 40px;
+	padding: 20px 40px;
 }
 
 .form-box {
-  margin-right: 20px;
-  padding: 25px 40px;
-  margin-bottom: 10px;
+	margin-right: 20px;
+	padding: 20px 40px;
+	margin-bottom: 10px;
 }
 
 .form-box .obligatorio {
-  display: block;
-  color: var(--Crimson);
+	display: block;
+	color: var(--Crimson);
 }
 
 .form-box input,
 select,
 textarea {
-  display: block;
-  width: 100%;
-  font-family: inherit;
-  border: 1px solid var(--Timber-wolf);
-  border-radius: 5px;
-  padding: 15px;
-  font-size: 15px;
-  font-weight: 600;
-  margin-top: 10px;
+	display: block;
+	width: 100%;
+	font-family: inherit;
+	border: 1px solid var(--Timber-wolf);
+	border-radius: 5px;
+	padding: 15px 5px;
+	font-size: 15px;
+	font-weight: 600;
+	margin-top: 10px;
 }
 
 .form-box .validacion {
-  position: relative;
+	position: relative;
 }
-.form-box .validacion i {
-  visibility: hidden;
-  position: absolute;
-  bottom: 20px;
-  right: 5px;
+
+.validar.fa {
+	visibility: visible;
+	position: absolute;
+	bottom: 20px;
+	right: 5px;
 }
 
 .form-box textarea {
-  resize: none;
-  height: 100px;
+	resize: none;
+	height: 100px;
 }
 
 .form-box input,
 textarea,
 select:focus {
-  outline-color: var(--Process-Cyan);
+	outline-color: var(--Process-Cyan);
 }
 
-
-.form button {
-  display: block;
-  width: 83%;
-  padding: 15px;
-  background: var(--Dim-gray);
-  margin: 0 0 0 40px;
-  border-radius: 5px;
-  color: var(--Timber-wolf);
-  font-size: 15px;
-  font-family: inherit;
-  text-transform: uppercase;
-  font-weight: 600;
+.form-box button {
+	display: block;
+	width: 100%;
+	padding: 15px 5px;
+	background: var(--Dim-gray);
+	border-radius: 5px;
+	color: var(--Timber-wolf);
+	font-size: 15px;
+	font-family: inherit;
+	text-transform: uppercase;
+	font-weight: 600;
 }
 
 .error {
-  color: var(--Crimson);
+	color: var(--Crimson);
 }
 
 .exito {
-  color: var(--Forest-green);
+	color: var(--Forest-green);
 }

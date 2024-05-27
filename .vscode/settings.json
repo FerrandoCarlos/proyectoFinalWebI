@@ -1,6 +1,4 @@
 {
-    "liveServer.settings.port": 5501,
-    "cSpell.words": [
-        "validacion"
-    ]
+	"liveServer.settings.port": 5501,
+	"cSpell.words": ["exito", "validacion"]
 }

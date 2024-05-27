@@ -1,115 +1,142 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contacto</title>
-    <!-- Estilos CSS -->
-    <link rel="stylesheet" href="css/estilosPrincipales.css" />
-    <link rel="stylesheet" href="css/contacto.css" />
-    <!-- FONT AWESOME -->
-    <script
-      src="https://kit.fontawesome.com/28866751b5.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <div class="hero">
-      <div class="redes">
-        <a href="#"><img src="assets/facebook.png" alt="Facebook" /></a>
-        <a href="#"><img src="assets/instagram.png" alt="Instagram" /></a>
-        <a href="#"><img src="assets/whatsapp.png" alt="WhatsApp" /></a>
-      </div>
-    </div>
-    <header>
-      <div class="container">
-        <nav>
-          <div class="menu-toggle">&#9776;</div>
-          <ul class="nav-menu">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="productos.html">Productos</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li class="active"><a href="contacto.html">Contacto</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main>
-      <section class="registro-container">
-        <div class="form-container">
-          <div class="form-header">
-            <h2>Formulario de contacto</h2>
-          </div>
-          <form
-            class="form"
-            id="user-form"
-            autocomplete="off"
-            accept-charset="utf-8"
-          >
-            <div class="form-box">
-              <label for="nombre">Nombre</label>
-              <small class="obligatorio">* campo obligatorio</small>
-              <div class="validacion">
-                <input
-                  type="text"
-                  name="nombre"
-                  id="nombre"
-                  placeholder="Ingresé aquí su nombre"
-                />
-                <i class="fa fa-check-circle" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="form-box">
-              <label for="email">Email</label>
-              <small class="obligatorio">* campo obligatorio</small>
-              <div class="validacion">
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="info@example.com"
-                />
-                <i class="fa fa-check-circle" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="form-box">
-              <label for="tel">Teléfono</label>
-              <div class="validacion">
-                <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  placeholder="2664123456"
-                />
-                <i class="fa fa-check-circle" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="form-box">
-              <label for="servicio">Elija la opción deseada</label>
-              <select name="servicio" class="servicio" id="servicio">
-                <option value="1">Celulares</option>
-                <option value="2">Computadoras</option>
-                <option value="3">Electronica en Gral</option>
-                <option value="4">Soporte técnico</option>
-                <option value="5">otra consulta</option>
-              </select>
-            </div>
-            <div class="form-box">
-              <label for="mensaje">Déjanos un mensaje</label>
-              <textarea name="mensaje" id="mensaje"></textarea>
-            </div>
-            <button type="submit" id="submit-btn">Enviar</button>
-          </form>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <div class="container">
-        <p><span>&copy;</span>mi web</p>
-      </div>
-    </footer>
-    <!-- JavaScript -->
-    <script src="js/menuBurger.js"></script>
-    <script src="js/contacto.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Contacto</title>
+		<!-- Estilos CSS -->
+		<link
+			rel="stylesheet"
+			href="css/estilosPrincipales.css" />
+		<link
+			rel="stylesheet"
+			href="css/contacto.css" />
+		<!-- FONT AWESOME -->
+		<script
+			src="https://kit.fontawesome.com/28866751b5.js"
+			crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div class="hero">
+			<div class="redes">
+				<a href="#"
+					><img
+						src="assets/facebook.png"
+						alt="Facebook"
+				/></a>
+				<a href="#"
+					><img
+						src="assets/instagram.png"
+						alt="Instagram"
+				/></a>
+				<a href="#"
+					><img
+						src="assets/whatsapp.png"
+						alt="WhatsApp"
+				/></a>
+			</div>
+		</div>
+		<header>
+			<div class="container">
+				<nav>
+					<div class="menu-toggle">&#9776;</div>
+					<ul class="nav-menu">
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="productos.html">Productos</a></li>
+						<li><a href="servicios.html">Servicios</a></li>
+						<li class="active"><a href="contacto.html">Contacto</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<main>
+			<section class="registro-container">
+				<div class="form-container">
+					<div class="form-header">
+						<h2>Formulario de contacto</h2>
+					</div>
+					<form
+						class="form"
+						id="user-form"
+						autocomplete="off"
+						onsubmit="return validar()">
+						<div class="form-box">
+							<label for="nombre">Nombre</label>
+							<small class="obligatorio">* campo obligatorio</small>
+							<div
+								class="validacion"
+								id="validarNombre">
+								<input
+									type="text"
+									name="nombre"
+									id="nombre"
+									placeholder="Ingresé aquí su nombre" />
+							</div>
+						</div>
+						<div class="form-box">
+							<label for="email">Email</label>
+							<small class="obligatorio">* campo obligatorio</small>
+							<div class="validacion">
+								<input
+									type="email"
+									name="email"
+									id="email"
+									placeholder="info@example.com" />
+								<i
+									class="validar"
+									id="validar"
+									aria-hidden="true"></i>
+							</div>
+						</div>
+						<div class="form-box">
+							<label for="tel">Teléfono</label>
+							<div class="validacion">
+								<input
+									type="text"
+									name="tel"
+									id="tel"
+									placeholder="2664123456" />
+								<i
+									class="validar"
+									id="validar"
+									aria-hidden="true"></i>
+							</div>
+						</div>
+						<div class="form-box">
+							<label for="servicio">Elija la opción deseada</label>
+							<select
+								name="servicio"
+								class="servicio"
+								id="servicio">
+								<option value="1">Celulares</option>
+								<option value="2">Computadoras</option>
+								<option value="3">Electronica en Gral</option>
+								<option value="4">Soporte técnico</option>
+								<option value="5">otra consulta</option>
+							</select>
+						</div>
+						<div class="form-box">
+							<label for="mensaje">Déjanos un mensaje</label>
+							<textarea
+								name="mensaje"
+								id="mensaje"></textarea>
+						</div>
+						<div class="form-box">
+							<button type="submit">Enviar</button>
+						</div>
+					</form>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<div class="container">
+				<p><span>&copy;</span>mi web</p>
+			</div>
+		</footer>
+		<!-- JavaScript -->
+		<script src="js/menuBurger.js"></script>
+		<script src="js/contacto.js"></script>
+	</body>
 </html>
