@@ -64,7 +64,11 @@
 						onsubmit="return validar()">
 						<div class="form-box">
 							<label for="nombre">Nombre</label>
-							<small class="obligatorio">* campo obligatorio</small>
+							<small
+								class="obligatorio"
+								id="nombre-oblig"
+								>* campo obligatorio</small
+							>
 							<div
 								class="validacion"
 								id="validarNombre">
@@ -77,12 +81,16 @@
 						</div>
 						<div class="form-box">
 							<label for="email">Email</label>
-							<small class="obligatorio">* campo obligatorio</small>
+							<small
+								class="obligatorio"
+								id="email-oblig"
+								>* campo obligatorio</small
+							>
 							<div
 								class="validacion"
 								id="validarEmail">
 								<input
-									type="email"
+									type="text"
 									name="email"
 									id="email"
 									placeholder="info@example.com" />

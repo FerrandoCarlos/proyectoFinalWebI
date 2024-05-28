@@ -63,6 +63,7 @@ body {
 
 .form-box .obligatorio {
 	display: block;
+	visibility: hidden;
 	color: var(--Crimson);
 }
 
