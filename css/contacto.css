@@ -119,12 +119,12 @@ select:focus {
 	font-weight: 600;
 }
 
-.parrafo.error {
+.parrafo .error {
 	color: var(--Crimson);
 	margin-top: 5px;
 }
 
-.parrafo.exito {
+.parrafo .exito {
 	color: var(--Forest-green);
 	margin-top: 5px;
 }

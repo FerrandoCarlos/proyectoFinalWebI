@@ -31,25 +31,32 @@ function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, 
 
     const parrafo = document.createElement("small");
     const valor = input.value.trim();
+    container.innerHTML = '';
+    parrafo.classList.remove("exito", "error");
+    if (valor === '' && obligElemento !== null) {                  //se revisa valores vacíos
+        parrafo.classList.remove("exito");
+        parrafo.classList.add("error");
+        parrafo.textContent = "El campo es obligatorio y no puede estar vacío";
+        valida.childNodes[3].style.visibility = "hidden";
+        valida.childNodes[5].style.visibility = "visible";
 
-    if (valor === '') {                  //se revisa valores vacíos
-        if (obligElemento !== null) {
-            icono.classList.add("validar", "fa", "fa-times-circle", "error");
-            parrafo.textContent = "El campo no puede ser vacío";
-            obligElemento.style.visibility = "visible";
-        }
-    } else if (regex.test(valor)) {
-        icono.classList.remove("validar", "fa", "fa-times-circle", "error");     //se valida por si el campo no cumple con la expresión regular
-        icono.classList.add("validar", "fa", "fa-check-circle", "exito");
-        parrafo.textContent = exitoMsg;
-        datos.push(valor);                //Se guardan los datos
-    } else {
-        icono.classList.remove("validar", "fa", "fa-check-circle", "exito");
-        icono.classList.remove("validar", "fa", "fa-times-circle", "error");     //si no valida casos anteriores es campo es correcto 
+    } else if (!regex.test(valor)) {
+        parrafo.classList.remove("exito");
+        parrafo.classList.add("error")          //Se revisan valores no correctos
         parrafo.textContent = errorMsg;
+        valida.childNodes[3].style.visibility = "hidden";
+        valida.childNodes[5].style.visibility = "visible";
+    } else {
+        parrafo.classList.remove("error");
+        parrafo.classList.add("exito");
+        parrafo.textContent = exitoMsg;
+        valida.childNodes[3].style.visibility = "visible";
+        valida.childNodes[5].style.visibility = "hidden";        //Se revisan valores correctos
+        datos.push(valor);                //Se guardan los datos
     }
-
-    parrafo.classList.add(valor === '' || !regex.test(valor) ? "parrafo-error" : "parrafo-exito");  //se agrega clase de error o exito al small 
+    // let pError = "parrafo" + "error";
+    // let pExito = "parrafo" + "exito";
+    // parrafo.classList.add(valor === '' || !regex.test(valor) ? pError : pExito);  //se agrega clase de error o exito al small 
 
     container.appendChild(parrafo);
 
