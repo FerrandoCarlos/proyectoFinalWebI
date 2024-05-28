@@ -1,5 +1,5 @@
 /* Fuentes */
-@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Poppins:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Poppins:wght@400;600;700&display=swap');
 /* Fin Fuentes */
 
 /* Variables Globales */
@@ -18,7 +18,7 @@
 	padding: 0;
 }
 body {
-	font-family: "Poppins", sans-serif;
+	font-family: 'Poppins', sans-serif;
 	height: 100vh;
 	box-sizing: border-box;
 }
@@ -58,13 +58,7 @@ body {
 .form-box {
 	margin-right: 20px;
 	padding: 20px 40px;
-	margin-bottom: 10px;
-}
-
-.form-box .obligatorio {
-	display: block;
-	visibility: hidden;
-	color: var(--Crimson);
+	margin-bottom: 5px;
 }
 
 .form-box input,
@@ -85,11 +79,20 @@ textarea {
 	position: relative;
 }
 
-.validar.fa {
-	visibility: visible;
+.validar.fa.error {
+	visibility: hidden;
 	position: absolute;
-	bottom: 40px;
+	bottom: 20px;
 	right: 5px;
+	color: var(--Crimson);
+}
+
+.validar.fa.exito {
+	visibility: hidden;
+	position: absolute;
+	bottom: 20px;
+	right: 5px;
+	color: var(--Forest-green);
 }
 
 .form-box textarea {
@@ -116,20 +119,12 @@ select:focus {
 	font-weight: 600;
 }
 
-.error {
-	color: var(--Crimson);
-}
-
-.exito {
-	color: var(--Forest-green);
-}
-
-.parrafo-error {
+.parrafo.error {
 	color: var(--Crimson);
 	margin-top: 5px;
 }
 
-.parrafo-exito {
+.parrafo.exito {
 	color: var(--Forest-green);
 	margin-top: 5px;
 }

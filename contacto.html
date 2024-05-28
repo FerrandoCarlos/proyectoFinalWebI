@@ -2,17 +2,11 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Contacto</title>
 		<!-- Estilos CSS -->
-		<link
-			rel="stylesheet"
-			href="css/estilosPrincipales.css" />
-		<link
-			rel="stylesheet"
-			href="css/contacto.css" />
+		<link rel="stylesheet" href="css/estilosPrincipales.css" />
+		<link rel="stylesheet" href="css/contacto.css" />
 		<!-- FONT AWESOME -->
 		<script
 			src="https://kit.fontawesome.com/28866751b5.js"
@@ -21,21 +15,9 @@
 	<body>
 		<div class="hero">
 			<div class="redes">
-				<a href="#"
-					><img
-						src="assets/facebook.png"
-						alt="Facebook"
-				/></a>
-				<a href="#"
-					><img
-						src="assets/instagram.png"
-						alt="Instagram"
-				/></a>
-				<a href="#"
-					><img
-						src="assets/whatsapp.png"
-						alt="WhatsApp"
-				/></a>
+				<a href="#"><img src="assets/facebook.png" alt="Facebook" /></a>
+				<a href="#"><img src="assets/instagram.png" alt="Instagram" /></a>
+				<a href="#"><img src="assets/whatsapp.png" alt="WhatsApp" /></a>
 			</div>
 		</div>
 		<header>
@@ -54,66 +36,62 @@
 		<main>
 			<section class="registro-container">
 				<div class="form-container">
+					<!-- Encabezado formulario -->
 					<div class="form-header">
 						<h2>Formulario de contacto</h2>
 					</div>
+					<!-- Inicio Formulario -->
 					<form
 						class="form"
-						id="user-form"
+						id="usuario-form"
 						autocomplete="off"
 						onsubmit="return validar()">
+						<!-- Nombre -->
 						<div class="form-box">
 							<label for="nombre">Nombre</label>
-							<small
-								class="obligatorio"
-								id="nombre-oblig"
-								>* campo obligatorio</small
-							>
-							<div
-								class="validacion"
-								id="validarNombre">
+							<div class="validacion" id="validarNombre">
 								<input
 									type="text"
 									name="nombre"
 									id="nombre"
 									placeholder="Ingresé aquí su nombre" />
+								<i class="validar fa fa-check-circle exito"></i>
+								<i class="validar fa fa-times-circle error"></i>
 							</div>
+							<p class="parrafo error" id="txtNombre"></p>
 						</div>
+						<!-- Email -->
 						<div class="form-box">
 							<label for="email">Email</label>
-							<small
-								class="obligatorio"
-								id="email-oblig"
-								>* campo obligatorio</small
-							>
-							<div
-								class="validacion"
-								id="validarEmail">
+							<div class="validacion" id="validarEmail">
 								<input
 									type="text"
 									name="email"
 									id="email"
 									placeholder="info@example.com" />
+								<i class="validar fa fa-check-circle exito"></i>
+								<i class="validar fa fa-times-circle error"></i>
 							</div>
+							<p class="parrafo error" id="txtEmail"></p>
 						</div>
+						<!-- Teléfono -->
 						<div class="form-box">
 							<label for="tel">Teléfono</label>
-							<div
-								class="validacion"
-								id="validarTel">
+							<div class="validacion" id="validarTel">
 								<input
 									type="text"
 									name="tel"
 									id="tel"
 									placeholder="2664123456" />
+								<i class="validar fa fa-check-circle exito"></i>
+								<i class="validar fa fa-times-circle error"></i>
 							</div>
+							<p class="parrafo error" id="txtTel"></p>
 						</div>
+						<!-- Opciones -->
 						<div class="form-box">
 							<label for="servicio">Elija la opción deseada</label>
-							<select
-								name="servicio"
-								class="servicio"
-								id="servicio">
+							<select name="servicio" class="servicio" id="servicio">
 								<option value="1">Celulares</option>
 								<option value="2">Computadoras</option>
 								<option value="3">Electronica en Gral</option>
@@ -121,16 +99,17 @@
 								<option value="5">otra consulta</option>
 							</select>
 						</div>
+						<!-- Mensaje -->
 						<div class="form-box">
 							<label for="mensaje">Déjanos un mensaje</label>
-							<textarea
-								name="mensaje"
-								id="mensaje"></textarea>
+							<textarea name="mensaje" id="mensaje"></textarea>
 						</div>
+						<!-- Botón Enviar -->
 						<div class="form-box">
 							<button type="submit">Enviar</button>
 						</div>
 					</form>
+					<!-- Fin formulario -->
 				</div>
 			</section>
 		</main>
