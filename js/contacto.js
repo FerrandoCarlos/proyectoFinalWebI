@@ -31,7 +31,7 @@ function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, 
 
     const parrafo = document.createElement("small");
     const valor = input.value.trim();
-    container.innerHTML = '';
+    container.innerHTML = ''; //Elimino el contenido del div 
     parrafo.classList.remove("exito", "error");
     if (valor === '' && obligElemento !== null) {                  //se revisa valores vacíos
         parrafo.classList.remove("exito");
@@ -54,9 +54,6 @@ function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, 
         valida.childNodes[5].style.visibility = "hidden";        //Se revisan valores correctos
         datos.push(valor);                //Se guardan los datos
     }
-    // let pError = "parrafo" + "error";
-    // let pExito = "parrafo" + "exito";
-    // parrafo.classList.add(valor === '' || !regex.test(valor) ? pError : pExito);  //se agrega clase de error o exito al small 
 
     container.appendChild(parrafo);
 
