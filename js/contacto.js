@@ -1,7 +1,7 @@
 //Expresiones regulares para validación
 const regExNombre = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
 const regExEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-const regExTel = /^(\+)?[1-9]\d{14}$/;
+const regExTel = /^[1-9]\d{9,14}$/;
 //se recuperan los campos 
 let nombreInput = document.getElementById('nombre');
 let emailInput = document.getElementById('email');
@@ -14,6 +14,7 @@ let validarTel = document.getElementById('validarTel');
 let txtNombre = document.getElementById('txtNombre');
 let txtEmail = document.getElementById('txtEmail');
 let txtTel = document.getElementById('txtTel');
+let servicioContacto = document.getElementById('servicio');
 const datos = [];//Array para recuperar datos
 
 
@@ -34,7 +35,7 @@ function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, 
     const valor = input.value.trim();
     container.innerHTML = ''; //Elimino el contenido del div 
 
-    let valido = true;
+
 
     if (valor === '' && obligElemento !== null) {  //se revisa valores vacíos                
         parrafo.classList.remove("exito");
@@ -42,7 +43,7 @@ function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, 
         parrafo.textContent = "El campo es obligatorio y no puede estar vacío";
         valida.childNodes[3].style.visibility = "hidden";
         valida.childNodes[5].style.visibility = "visible";
-        valido = false;
+
 
     } else if (!regex.test(valor) && valor !== '') {//Se revisan valores no correctos
         parrafo.classList.remove("exito");
@@ -50,7 +51,7 @@ function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, 
         parrafo.textContent = errorMsg;
         valida.childNodes[3].style.visibility = "hidden";
         valida.childNodes[5].style.visibility = "visible";
-        valido = false;
+
 
     } else {  //Se revisan valores correctos
         if (valor !== '') {
@@ -60,7 +61,8 @@ function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, 
             parrafo.textContent = exitoMsg;
             valida.childNodes[3].style.visibility = "visible";
             valida.childNodes[5].style.visibility = "hidden";
-            datos.push(valor);                //Se guardan los datos correctos
+            datos.push(valor);
+            datos.push(servicioContacto.value);              //Se guardan los datos correctos
         }
 
     }
