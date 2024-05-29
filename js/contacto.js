@@ -1,3 +1,4 @@
+
 //Expresiones regulares para validación
 const regExNombre = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
 const regExEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
@@ -15,16 +16,30 @@ let txtNombre = document.getElementById('txtNombre');
 let txtEmail = document.getElementById('txtEmail');
 let txtTel = document.getElementById('txtTel');
 let servicioContacto = document.getElementById('servicio');
+let txtMensaje = document.getElementById('mensaje');
+
+let verificar = false;//Bandera para no guardar datos incorrectos
 const datos = [];//Array para recuperar datos
 
 
 
 
 function validar() {
-    limpiar();
+
+
     valNombre();
     valEmail();
     valTel();
+    agregarDatos();
+    valServicio();
+    valMensaje();
+    if (verificar) {
+        limpiar();
+        verificar = false;
+    }
+
+
+
 
     return false;
 }
@@ -44,14 +59,12 @@ function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, 
         valida.childNodes[3].style.visibility = "hidden";
         valida.childNodes[5].style.visibility = "visible";
 
-
     } else if (!regex.test(valor) && valor !== '') {//Se revisan valores no correctos
         parrafo.classList.remove("exito");
         parrafo.classList.add("error")
         parrafo.textContent = errorMsg;
         valida.childNodes[3].style.visibility = "hidden";
         valida.childNodes[5].style.visibility = "visible";
-
 
     } else {  //Se revisan valores correctos
         if (valor !== '') {
@@ -61,8 +74,7 @@ function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, 
             parrafo.textContent = exitoMsg;
             valida.childNodes[3].style.visibility = "visible";
             valida.childNodes[5].style.visibility = "hidden";
-            datos.push(valor);
-            datos.push(servicioContacto.value);              //Se guardan los datos correctos
+            verificar = true;
         }
 
     }
@@ -94,6 +106,7 @@ function valEmail() {
         "El email ingresado es correcto",
         "Ingrese un email válido"
     );
+
 }
 
 function valTel() {
@@ -106,6 +119,33 @@ function valTel() {
         "El teléfono ingresado es correcto",
         "Ingrese un teléfono válido"
     );
+
+}
+
+function valServicio() {
+    const valor = servicioContacto.value;
+    if (valor !== '') {
+        datos.push(valor);
+    } else {
+        datos.push("No especificado");
+    }
+}
+
+function agregarDatos(mensaje) {
+    if (verificar) {
+        datos.push(nombreInput.value);
+        datos.push(emailInput.value);
+        datos.push(telInput.value);
+    }
+}
+
+function valMensaje() {
+    const valor = txtMensaje.value;
+    if (valor !== '') {
+        datos.push(valor);
+    } else {
+        datos.push("Mensaje no especificado");
+    }
 }
 
 function limpiar() {
