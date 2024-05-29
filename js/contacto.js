@@ -17,6 +17,7 @@ let txtEmail = document.getElementById('txtEmail');
 let txtTel = document.getElementById('txtTel');
 let servicioContacto = document.getElementById('servicio');
 let txtMensaje = document.getElementById('mensaje');
+let listaDatos = document.getElementById('datos');
 
 let verificar = false;//Bandera para no guardar datos incorrectos
 const datos = [];//Array para recuperar datos
@@ -37,7 +38,11 @@ function validar() {
         limpiar();
         verificar = false;
     }
-
+    for (let dato of datos) {
+        let li = document.createElement("li");
+        li.innerHTML = dato;
+        listaDatos.appendChild(li);
+    }
 
 
 
