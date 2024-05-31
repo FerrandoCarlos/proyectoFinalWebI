@@ -63,6 +63,7 @@ function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, 
 
 
     const parrafo = document.createElement("small");
+    parrafo.textContent = '';
     container.appendChild(parrafo);
 
     if (valor === '' && obligElemento) {  //se revisa valores vacíos                
@@ -83,11 +84,12 @@ function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, 
 
     } else {  //Se revisan valores correctos
         if (valor === '') {
+
             parrafo.classList.remove("error");
+            valida.childNodes[5].style.visibility = "hidden";
+            valida.childNodes[3].style.visibility = "visible";
             parrafo.classList.add("exito");
             parrafo.textContent = exitoMsg;
-            valida.childNodes[3].style.visibility = "visible";
-            valida.childNodes[5].style.visibility = "hidden";
         }
 
         return true;
