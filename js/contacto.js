@@ -27,8 +27,8 @@ let mensajeValido;
 var datos = [];
 formulario.addEventListener('submit', (event) => {
     event.preventDefault();
-    limpiar();
     validar();
+    limpiar();
 
 });
 
