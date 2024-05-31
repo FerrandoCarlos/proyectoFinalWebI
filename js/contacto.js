@@ -83,7 +83,7 @@ function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, 
         return false;
 
     } else {  //Se revisan valores correctos
-        if (valor === '') {
+        if (valor !== '') {
 
             parrafo.classList.remove("error");
             valida.childNodes[5].style.visibility = "hidden";
