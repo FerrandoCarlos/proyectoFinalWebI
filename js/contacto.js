@@ -15,31 +15,47 @@ const txtNombre = document.getElementById('txtNombre');
 const txtEmail = document.getElementById('txtEmail');
 const txtTel = document.getElementById('txtTel');
 const servicioContacto = document.getElementById('servicio');
-const txtMensaje = document.getElementById('mensaje'); const listaDatos = document.getElementById('datos');
+const txtMensaje = document.getElementById('mensaje');
+const listaDatos = document.getElementById('datos');
 
-
-
+//Array global
+var datos = [];
 
 
 function validar() {
-    const datos = [];//Array para recuperar datos
+    //Array para recuperar datos
 
     const nombreValido = valNombre();
     const emailValido = valEmail();
     const telValido = valTel();
-    valServicio(datos);
-    valMensaje(datos);
+
+    //valServicio(datos);
+    // valMensaje();
 
     if (nombreValido && emailValido && telValido) {
+
+        cargarDatos();
+
         for (let dato of datos) {
             let li = document.createElement("li");
             li.innerHTML = dato;
             listaDatos.appendChild(li);
         }
+        datos = null;
         limpiar();
     }
 
     return false;
+}
+
+function cargarDatos() {
+    datos.push(nombreInput.value);
+    datos.push(emailInput.value);
+    datos.push(telInput.value);
+    datos.push(servicioContacto.value);
+    datos.push(txtMensaje.value);
+
+
 }
 
 function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, errorMsg) {
@@ -74,13 +90,15 @@ function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, 
         parrafo.textContent = exitoMsg;
         valida.childNodes[3].style.visibility = "visible";
         valida.childNodes[5].style.visibility = "hidden";
-        verificar = true;
+        //verificar = true;
+
+        return true;
 
     }
 }
 
 function valNombre() {
-    validarCampo(
+    return validarCampo(
         nombreInput,
         regExNombre,
         validarNombre,
@@ -92,7 +110,7 @@ function valNombre() {
 }
 
 function valEmail() {
-    validarCampo(
+    return validarCampo(
         emailInput,
         regExEmail,
         validarEmail,
@@ -105,7 +123,7 @@ function valEmail() {
 }
 
 function valTel() {
-    validarCampo(
+    return validarCampo(
         telInput,
         regExTel,
         validarTel,
@@ -117,10 +135,10 @@ function valTel() {
 
 }
 
-function valServicio(datos) {
+/* function valServicio(datos) {
     const valor = servicioContacto.value;
     if (valor !== '') {
-        datos.push(valor);
+        datos.push(servicioContacto.value);
     } else {
         datos.push("No especificado");
     }
@@ -135,7 +153,7 @@ function valMensaje(datos) {
     } else {
         datos.push("Mensaje no especificado");
     }
-}
+} */
 
 function limpiar() {
     //se esconden los iconos
