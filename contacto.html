@@ -42,11 +42,7 @@
 						<h2>Formulario de contacto</h2>
 					</div>
 					<!-- Inicio Formulario -->
-					<form
-						class="form"
-						id="usuario-form"
-						autocomplete="off"
-						onsubmit="return validar()">
+					<form class="form" id="usuario-form" autocomplete="off">
 						<!-- Nombre -->
 						<div class="form-box">
 							<label for="nombre">Nombre</label>
@@ -105,12 +101,14 @@
 						</div>
 						<!-- Botón Enviar -->
 						<div class="form-box">
-							<button type="submit" id="enviar">Enviar</button>
+							<button type="submit">Enviar</button>
 						</div>
 					</form>
 					<!-- Fin formulario -->
 				</div>
-				<ul class="datos" id="datos"></ul>
+				<div class="lista-datos">
+					<ul class="datos" id="datos"></ul>
+				</div>
 			</section>
 		</main>
 		<footer>

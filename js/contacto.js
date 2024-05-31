@@ -17,43 +17,62 @@ const txtTel = document.getElementById('txtTel');
 const servicioContacto = document.getElementById('servicio');
 const txtMensaje = document.getElementById('mensaje');
 const listaDatos = document.getElementById('datos');
+let nombreValido;
+let emailValido;
+let telValido;
+let servicioValido;
+let mensajeValido;
 
 //Array global
 var datos = [];
-limpiar();
+formulario.addEventListener('submit', (event) => {
+    event.preventDefault();
+    limpiar();
+    validar();
+
+});
 
 function validar() {
-    //Array para recuperar datos
 
-    const nombreValido = valNombre();
-    const emailValido = valEmail();
-    const telValido = valTel();
+    nombreValido = valNombre();
+    emailValido = valEmail();
+    telValido = valTel();
+    servicioValido = valServicio();
+    mensajeValido = valMensaje();
 
-    const servicioValido = valServicio();
-    const mensajeValido = valMensaje();
-
-    if (nombreValido && emailValido && telValido && servicioValido && mensajeValido) {
+    if (nombreValido && emailValido) {
 
         cargarDatos();
-
+        //bucle para crear lista 
         for (let dato of datos) {
             let li = document.createElement("li");
             li.innerHTML = dato;
             listaDatos.appendChild(li);
         }
-        datos = null;
-        limpiar();
+        datos = [];//nueva instancia para vaciar array
     }
-
-    return false;
 }
 
 function cargarDatos() {
+
     datos.push(nombreInput.value);
     datos.push(emailInput.value);
-    datos.push(telInput.value);
-    datos.push(servicioContacto.value);
-    datos.push(txtMensaje.value);
+    if (telInput.value !== '' && telValido) {
+        datos.push(telInput.value);
+    } else {
+        datos.push('No ingreso el teléfono o teléfono invalido');
+    }
+    if (servicioContacto.value !== '' && servicioValido) {
+        datos.push(servicioContacto.value);
+    } else {
+        datos.push("No ha ingresado ningún servicio");
+    }
+    if (txtMensaje.value !== '' && mensajeValido) {
+        datos.push(txtMensaje.value);
+    } else {
+        datos.push("No ha ingresado ningún mensaje");
+    }
+
 }
 
 function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, errorMsg) {
