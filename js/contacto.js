@@ -20,7 +20,7 @@ const listaDatos = document.getElementById('datos');
 
 //Array global
 var datos = [];
-
+limpiar();
 
 function validar() {
     //Array para recuperar datos
