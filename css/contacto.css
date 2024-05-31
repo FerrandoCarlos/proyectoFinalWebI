@@ -26,6 +26,7 @@ body {
 .registro-container {
 	min-height: 100%;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
@@ -127,4 +128,9 @@ select:focus {
 .parrafo .exito {
 	color: var(--Forest-green);
 	margin-top: 5px;
+}
+
+.datos {
+	margin: 20px 0;
+	text-transform: uppercase;
 }

@@ -1,68 +1,63 @@
-
 //Expresiones regulares para validación
 const regExNombre = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
 const regExEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 const regExTel = /^[1-9]\d{9,14}$/;
 //se recuperan los campos 
-let nombreInput = document.getElementById('nombre');
-let emailInput = document.getElementById('email');
-let telInput = document.getElementById('tel');
-let formulario = document.getElementById("usuario-form");
+const nombreInput = document.getElementById('nombre');
+const emailInput = document.getElementById('email');
+const telInput = document.getElementById('tel');
+const formulario = document.getElementById("usuario-form");
 
-let validarNombre = document.getElementById('validarNombre');
-let validarEmail = document.getElementById('validarEmail');
-let validarTel = document.getElementById('validarTel');
-let txtNombre = document.getElementById('txtNombre');
-let txtEmail = document.getElementById('txtEmail');
-let txtTel = document.getElementById('txtTel');
-let servicioContacto = document.getElementById('servicio');
-let txtMensaje = document.getElementById('mensaje');
-let listaDatos = document.getElementById('datos');
+const validarNombre = document.getElementById('validarNombre');
+const validarEmail = document.getElementById('validarEmail');
+const validarTel = document.getElementById('validarTel');
+const txtNombre = document.getElementById('txtNombre');
+const txtEmail = document.getElementById('txtEmail');
+const txtTel = document.getElementById('txtTel');
+const servicioContacto = document.getElementById('servicio');
+const txtMensaje = document.getElementById('mensaje'); const listaDatos = document.getElementById('datos');
 
-let verificar = false;//Bandera para no guardar datos incorrectos
-const datos = [];//Array para recuperar datos
 
 
 
 
 function validar() {
+    const datos = [];//Array para recuperar datos
 
+    const nombreValido = valNombre();
+    const emailValido = valEmail();
+    const telValido = valTel();
+    valServicio(datos);
+    valMensaje(datos);
 
-    valNombre();
-    valEmail();
-    valTel();
-    agregarDatos();
-    valServicio();
-    valMensaje();
-    if (verificar) {
+    if (nombreValido && emailValido && telValido) {
+        for (let dato of datos) {
+            let li = document.createElement("li");
+            li.innerHTML = dato;
+            listaDatos.appendChild(li);
+        }
         limpiar();
-        verificar = false;
     }
-    for (let dato of datos) {
-        let li = document.createElement("li");
-        li.innerHTML = dato;
-        listaDatos.appendChild(li);
-    }
-
-
 
     return false;
 }
 
 function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, errorMsg) {
 
-    const parrafo = document.createElement("small");
     const valor = input.value.trim();
     container.innerHTML = ''; //Elimino el contenido del div 
 
 
+    const parrafo = document.createElement("small");
+    container.appendChild(parrafo);
 
-    if (valor === '' && obligElemento !== null) {  //se revisa valores vacíos                
+    if (valor === '' && obligElemento) {  //se revisa valores vacíos                
         parrafo.classList.remove("exito");
         parrafo.classList.add("error");
         parrafo.textContent = "El campo es obligatorio y no puede estar vacío";
         valida.childNodes[3].style.visibility = "hidden";
         valida.childNodes[5].style.visibility = "visible";
+        return false;
 
     } else if (!regex.test(valor) && valor !== '') {//Se revisan valores no correctos
         parrafo.classList.remove("exito");
@@ -70,23 +65,18 @@ function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, 
         parrafo.textContent = errorMsg;
         valida.childNodes[3].style.visibility = "hidden";
         valida.childNodes[5].style.visibility = "visible";
+        return false;
 
     } else {  //Se revisan valores correctos
-        if (valor !== '') {
 
-            parrafo.classList.remove("error");
-            parrafo.classList.add("exito");
-            parrafo.textContent = exitoMsg;
-            valida.childNodes[3].style.visibility = "visible";
-            valida.childNodes[5].style.visibility = "hidden";
-            verificar = true;
-        }
+        parrafo.classList.remove("error");
+        parrafo.classList.add("exito");
+        parrafo.textContent = exitoMsg;
+        valida.childNodes[3].style.visibility = "visible";
+        valida.childNodes[5].style.visibility = "hidden";
+        verificar = true;
 
     }
-
-    container.appendChild(parrafo);
-
-
 }
 
 function valNombre() {
@@ -95,7 +85,7 @@ function valNombre() {
         regExNombre,
         validarNombre,
         txtNombre,
-        "si",
+        true,
         "El nombre ingresado es correcto",
         "Ingrese un nombre válido");
 
@@ -107,7 +97,7 @@ function valEmail() {
         regExEmail,
         validarEmail,
         txtEmail,
-        "si",
+        true,
         "El email ingresado es correcto",
         "Ingrese un email válido"
     );
@@ -120,14 +110,14 @@ function valTel() {
         regExTel,
         validarTel,
         txtTel,
-        null,
+        false,
         "El teléfono ingresado es correcto",
         "Ingrese un teléfono válido"
     );
 
 }
 
-function valServicio() {
+function valServicio(datos) {
     const valor = servicioContacto.value;
     if (valor !== '') {
         datos.push(valor);
@@ -136,16 +126,10 @@ function valServicio() {
     }
 }
 
-function agregarDatos(mensaje) {
-    if (verificar) {
-        datos.push(nombreInput.value);
-        datos.push(emailInput.value);
-        datos.push(telInput.value);
-    }
-}
 
-function valMensaje() {
-    const valor = txtMensaje.value;
+
+function valMensaje(datos) {
+    const valor = txtMensaje.value.trim();
     if (valor !== '') {
         datos.push(valor);
     } else {
@@ -154,14 +138,19 @@ function valMensaje() {
 }
 
 function limpiar() {
-    validarNombre.childNodes[3].style.visibility = "hidden"
-    validarNombre.childNodes[5].style.visibility = "hidden"
-    validarEmail.childNodes[3].style.visibility = "hidden"
-    validarEmail.childNodes[5].style.visibility = "hidden"
-    validarTel.childNodes[3].style.visibility = "hidden"
-    validarTel.childNodes[5].style.visibility = "hidden"
-    txtNombre.innerHTML = '';
-    txtEmail.innerHTML = '';
-    txtTel.innerHTML = '';
+    //se esconden los iconos
+    [validarNombre, validarEmail, validarTel].forEach(validar => {
+        validar.childNodes[3].style.visibility = "hidden";
+        validar.childNodes[5].style.visibility = "hidden";
+    });
+    //se borran todos los mensajes de error
+    [txtNombre, txtEmail, txtTel].forEach(txt => {
+        txt.innerHTML = '';
+    });
+    //se borran los textos 
+    txtMensaje.value = '';
+    servicioContacto.value = '';
+    formulario.reset();//se borran los campos
 }
+
 
