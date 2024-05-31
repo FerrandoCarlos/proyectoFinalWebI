@@ -29,10 +29,10 @@ function validar() {
     const emailValido = valEmail();
     const telValido = valTel();
 
-    //valServicio(datos);
-    // valMensaje();
+    const servicioValido = valServicio();
+    const mensajeValido = valMensaje();
 
-    if (nombreValido && emailValido && telValido) {
+    if (nombreValido && emailValido && telValido && servicioValido && mensajeValido) {
 
         cargarDatos();
 
@@ -54,8 +54,6 @@ function cargarDatos() {
     datos.push(telInput.value);
     datos.push(servicioContacto.value);
     datos.push(txtMensaje.value);
-
-
 }
 
 function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, errorMsg) {
@@ -135,12 +133,12 @@ function valTel() {
 
 }
 
-/* function valServicio(datos) {
+function valServicio(datos) {
     const valor = servicioContacto.value;
     if (valor !== '') {
-        datos.push(servicioContacto.value);
+        return true;
     } else {
-        datos.push("No especificado");
+        return false;
     }
 }
 
@@ -149,11 +147,11 @@ function valTel() {
 function valMensaje(datos) {
     const valor = txtMensaje.value.trim();
     if (valor !== '') {
-        datos.push(valor);
+        return true;
     } else {
-        datos.push("Mensaje no especificado");
+        return false;
     }
-} */
+}
 
 function limpiar() {
     //se esconden los iconos
