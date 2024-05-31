@@ -84,13 +84,13 @@ function validarCampo(input, regex, valida, container, obligElemento, exitoMsg, 
         return false;
 
     } else {  //Se revisan valores correctos
-
-        parrafo.classList.remove("error");
-        parrafo.classList.add("exito");
-        parrafo.textContent = exitoMsg;
-        valida.childNodes[3].style.visibility = "visible";
-        valida.childNodes[5].style.visibility = "hidden";
-        //verificar = true;
+        if (valor === '') {
+            parrafo.classList.remove("error");
+            parrafo.classList.add("exito");
+            parrafo.textContent = exitoMsg;
+            valida.childNodes[3].style.visibility = "visible";
+            valida.childNodes[5].style.visibility = "hidden";
+        }
 
         return true;
 
