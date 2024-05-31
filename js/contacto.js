@@ -43,7 +43,13 @@ function validar() {
     if (nombreValido && emailValido) {
 
         cargarDatos();
-        //bucle para crear lista 
+        //bucle para crear lista
+        let divDatos = document.createElement('div');
+        divDatos.classList.add('lista-datos');
+        listaDatos.appendChild(divDatos);
+        let ulDatos = document.createElement('ul');
+        ulDatos.classList.add('datos');
+        divDatos.appendChild(ulDatos);
         for (let dato of datos) {
             let li = document.createElement("li");
             li.innerHTML = dato;
