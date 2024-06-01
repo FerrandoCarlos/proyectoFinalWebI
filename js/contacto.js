@@ -43,13 +43,11 @@ function validar() {
     if (nombreValido && emailValido) {
 
         cargarDatos();
-        //Creo contenedor
-        let divDatos = document.createElement('div');
-        divDatos.classList.add('lista-datos');
-        //creo lista desordenada dentro del div
-        divDatos.innerHTML = `<ul class="datos"></ul>`;
-        //inserto el div al final del section
-        document.querySelector("section").appendChild("divDatos");
+        //contenedor
+        const contenedor = document.getElementById("datos-contenedor");
+        const ul = document.createElement("ul");
+        ul.classList.add("datos");
+        contenedor.appendChild(ul);
         //bucle para crear lista
         for (let dato of datos) {
             let li = document.createElement("li");
@@ -161,7 +159,7 @@ function valTel() {
 
 }
 
-function valServicio(datos) {
+function valServicio() {
     const valor = servicioContacto.value;
     if (valor !== '') {
         return true;
@@ -172,7 +170,7 @@ function valServicio(datos) {
 
 
 
-function valMensaje(datos) {
+function valMensaje() {
     const valor = txtMensaje.value.trim();
     if (valor !== '') {
         return true;
