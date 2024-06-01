@@ -16,7 +16,7 @@ const txtEmail = document.getElementById('txtEmail');
 const txtTel = document.getElementById('txtTel');
 const servicioContacto = document.getElementById('servicio');
 const txtMensaje = document.getElementById('mensaje');
-const listaDatos = document.getElementById('datos');
+
 let nombreValido;
 let emailValido;
 let telValido;
@@ -52,7 +52,7 @@ function validar() {
         for (let dato of datos) {
             let li = document.createElement("li");
             li.innerHTML = dato;
-            listaDatos.appendChild(li);
+            ul.appendChild(li);
         }
         datos = [];//nueva instancia para vaciar array
     }
