@@ -22,13 +22,16 @@ let emailValido;
 let telValido;
 let servicioValido;
 let mensajeValido;
+let formEnviado = false;
 
 //Array global
 var datos = [];
 formulario.addEventListener('submit', (event) => {
     event.preventDefault();
     validar();
-    limpiar();
+    if (formEnviado) {
+        limpiar();
+    }
 
 });
 
@@ -39,9 +42,8 @@ function validar() {
     telValido = valTel();
     servicioValido = valServicio();
     mensajeValido = valMensaje();
-
+    //si los campos obligatorios son correctos se cargan los datos
     if (nombreValido && emailValido) {
-
         cargarDatos();
         //contenedor
         const contenedor = document.getElementById("datos-contenedor");
@@ -56,6 +58,7 @@ function validar() {
             ul.appendChild(li);
         }
         datos = [];//nueva instancia para vaciar array
+        formEnviado = true;
     }
 }
 
