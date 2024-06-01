@@ -131,7 +131,7 @@ select:focus {
 }
 
 .lista-datos {
-	width: 300px;
+	width: 500px;
 	max-width: 100%;
 	/* efecto glass */
 	background: rgba(81, 176, 215, 0.7);
