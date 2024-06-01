@@ -45,6 +45,7 @@ function validar() {
         cargarDatos();
         //contenedor
         const contenedor = document.getElementById("datos-contenedor");
+        contenedor.classList.add("lista-datos")
         const ul = document.createElement("ul");
         ul.classList.add("datos");
         contenedor.appendChild(ul);
