@@ -43,13 +43,14 @@ function validar() {
     if (nombreValido && emailValido) {
 
         cargarDatos();
-        //bucle para crear lista
+        //Creo contenedor
         let divDatos = document.createElement('div');
         divDatos.classList.add('lista-datos');
-        listaDatos.appendChild(divDatos);
-        let ulDatos = document.createElement('ul');
-        ulDatos.classList.add('datos');
-        divDatos.appendChild(ulDatos);
+        //creo lista desordenada dentro del div
+        divDatos.innerHTML = `<ul class="datos"></ul>`;
+        //inserto el div al final del section
+        document.querySelector("section").appendChild("divDatos");
+        //bucle para crear lista
         for (let dato of datos) {
             let li = document.createElement("li");
             li.innerHTML = dato;
